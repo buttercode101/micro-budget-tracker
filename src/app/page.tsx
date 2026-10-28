@@ -1,3 +1,4 @@
+"use client";
 import { calculateTotal } from "@/lib/expenseUtils.js";
 
 import { useState, useEffect } from "react";
