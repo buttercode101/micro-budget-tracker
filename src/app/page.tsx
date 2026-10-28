@@ -24,7 +24,7 @@ export default function Home() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [desc, setDesc] = useState("");
   const [amt, setAmt] = useState("");
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     setExpenses(loadExpenses());
@@ -33,6 +33,11 @@ export default function Home() {
   useEffect(() => {
     saveExpenses(expenses);
   }, [expenses]);
+
+  // Set initial date on client side (avoid prerender issue)
+  useEffect(() => {
+    setDate(new Date().toISOString().split("T")[0]);
+  }, []);
 
   function addExpense(e: React.FormEvent) {
     e.preventDefault();
