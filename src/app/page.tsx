@@ -1,7 +1,5 @@
 import { calculateTotal } from "@/lib/expenseUtils.js";
 
-
-
 import { useState, useEffect } from "react";
 
 interface Expense {
@@ -50,7 +48,6 @@ export default function Home() {
   }
 
   const total = calculateTotal(expenses);
-
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black p-4">
@@ -101,4 +98,4 @@ export default function Home() {
       </main>
     </div>
   );
-
+}
